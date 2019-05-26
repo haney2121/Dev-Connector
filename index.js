@@ -1,10 +1,12 @@
 const express = require('express');
 const connectDB = require('./config/db');
-
 //Setup Express Server
 const app = express();
 //Connecting Database
 connectDB();
+
+//Init Middelware - bodyparser built with express
+app.use(express.json({ extended: true }));
 
 app.get('/', (req, res) => res.send('API RUNNING'));
 
