@@ -1,6 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://Haney:Gators21@devconnector-hpx5y.mongodb.net/test?retryWrites=true",
-  "jwtSecret": "sdfjs0d9fjsdfmnklcmnsdfj",
-  "githubClientId": "e0d8bd5162e738b56749",
-  "githubClientSecret": "4e96797ef39aa7b497b262df5594d43a4d2d373a"
-}
