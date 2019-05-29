@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Dashboard from './components/dashboard/Dashboard';
+import DevelopersList from './components/developers/DevelopersList';
+import Developer from './components/developers/Developer';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Alert from './components/layout/Alert';
@@ -60,6 +62,8 @@ const App = () => {
                 path='/add-experience'
                 component={AddExperience}
               />
+              <Route exact path='/developers' component={DevelopersList} />
+              <Route exact path='/developers/user' component={Developer} />
             </Switch>
           </section>
         </Fragment>

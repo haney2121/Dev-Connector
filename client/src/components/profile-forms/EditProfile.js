@@ -60,7 +60,7 @@ const EditProfile = props => {
       instagram:
         loading || !profile.social.instagram ? '' : profile.social.instagram
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const handleSocialOpen = () => {
     setSocialToggle(!socialToggle);
@@ -172,8 +172,7 @@ const EditProfile = props => {
           <button
             type='button'
             className='btn btn-light'
-            onClick={handleSocialOpen}
-          >
+            onClick={handleSocialOpen}>
             Add Social Network Links
           </button>
           <span>Optional</span>

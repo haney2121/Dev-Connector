@@ -3,10 +3,9 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
-import { setAlert } from '../../actions/alert';
 
 const Login = props => {
-  const { login, setAlert, isAuthenticated } = props;
+  const { login, isAuthenticated } = props;
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -74,5 +73,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { login, setAlert }
+  { login }
 )(Login);

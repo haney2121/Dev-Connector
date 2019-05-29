@@ -7,6 +7,7 @@ const { check, validationResult } = require('express-validator/check');
 const auth = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
 
 //@route  GET api/profile/me
 //@desc   Gets only the current user profile
@@ -150,8 +151,8 @@ router.get('/user/:user_id', async (req, res) => {
 //@access Private
 router.delete('/', auth, async (req, res) => {
   try {
-    //@todo = remove users posts
-
+    //remove users posts
+    await Post.findOneAndRemove({ user: req.user.id });
     //remove Profile
     await Profile.findOneAndRemove({ user: req.user.id });
     //remove User
@@ -296,14 +297,14 @@ router.put(
     }
   }
 );
-//@route  DELETE api/profile/education/:exp_id
+//@route  DELETE api/profile/education/:edu_id
 //@desc   Delete a profile education
 //@access Private
-router.delete('/education/:exp_id', auth, async (req, res) => {
+router.delete('/education/:edu_id', auth, async (req, res) => {
   try {
     //getting profile
     const profile = await Profile.findOne({ user: req.user.id });
-    //Get index for need education mapping over all exp
+    //Get index for need education mapping over all edu
     const removeIndex = profile.education
       .map(edu => edu.id)
       //getting the id from url
@@ -312,7 +313,7 @@ router.delete('/education/:exp_id', auth, async (req, res) => {
     profile.education.splice(removeIndex, 1);
     //saving profile
     await profile.save();
-    //returning profile information with removed exp
+    //returning profile information with removed edu
     res.json(profile);
   } catch (err) {
     console.error(err.message);

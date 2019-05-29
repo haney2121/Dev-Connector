@@ -6,10 +6,21 @@ import { logout } from '../../actions/auth';
 
 const Navbar = props => {
   const { logout } = props;
-  const { user, loading, isAuthenticated } = props.auth;
+  const { loading, isAuthenticated } = props.auth;
 
   const authLinks = (
     <ul>
+      <li>
+        <Link to='/developers'>
+          <span className='hide-sm'>Developers</span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/posts'>
+          <span className='hide-sm'>Posts</span>
+        </Link>
+      </li>
+      |
       <li>
         <Link to='/dashboard'>
           <i className='fas fa-user' />{' '}
