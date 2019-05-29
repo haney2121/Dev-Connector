@@ -12,7 +12,7 @@ const Navbar = props => {
     <ul>
       <li>
         <Link to='/dashboard'>
-          <i className='fas fa-user' />
+          <i className='fas fa-user' />{' '}
           <span className='hide-sm'>Dashboard</span>
         </Link>
       </li>
@@ -44,7 +44,6 @@ const Navbar = props => {
           <i className='fas fa-code' /> DevConnector
         </Link>
       </h1>
-      {user && isAuthenticated && `Hello, ${user.name}`}
       {!loading && isAuthenticated ? authLinks : guestLinks}
     </nav>
   );
