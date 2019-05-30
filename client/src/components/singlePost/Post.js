@@ -17,7 +17,7 @@ const Post = props => {
 
   return (
     <div>
-      {loading ? (
+      {loading || post === null ? (
         <Spinner />
       ) : (
         <>
