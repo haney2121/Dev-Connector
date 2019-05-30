@@ -14,3 +14,11 @@ export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const GET_PROFILES = 'GET_PROFILES';
 export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';
 export const GET_REPOS = 'GET_REPOS';
+
+//post types
+export const GET_POST = 'GET_POST';
+export const POST_ERROR = 'POST_ERROR';
+export const LIKE_POST = 'LIKE_POST';
+export const DELETE_POST = 'DELETE_POST';
+export const CREATE_POST = 'CREATE_POST';
+export const SINGLE_POST = 'SINGLE_POST';

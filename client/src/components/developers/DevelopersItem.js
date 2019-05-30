@@ -17,7 +17,9 @@ const DevelopersItem = props => {
             {profile.status} at {profile.company}
           </p>
           <p>{profile.location}</p>
-          <Link to={`/user/${profile.user._id}`} className='btn btn-primary'>
+          <Link
+            to={`/developers/${profile.user._id}`}
+            className='btn btn-primary'>
             View Profile
           </Link>
         </div>

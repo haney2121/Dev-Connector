@@ -4,9 +4,11 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Dashboard from './components/dashboard/Dashboard';
 import DevelopersList from './components/developers/DevelopersList';
-import Developer from './components/developers/Developer';
+import Profile from './components/profile/Profile';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import Posts from './components/post/Posts';
+import Post from './components/singlePost/Post';
 import Alert from './components/layout/Alert';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
@@ -63,7 +65,9 @@ const App = () => {
                 component={AddExperience}
               />
               <Route exact path='/developers' component={DevelopersList} />
-              <Route exact path='/developers/user' component={Developer} />
+              <Route exact path='/developers/:id' component={Profile} />
+              <PrivateRoute exact path='/posts' component={Posts} />
+              <PrivateRoute exact path='/posts/:id' component={Post} />
             </Switch>
           </section>
         </Fragment>
